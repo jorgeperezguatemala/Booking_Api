@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->enum('room_type', ['Standard', 'Suite king size bed', 'double', 'familiar']);
             $table->decimal('price_per_night', 8, 2);
-            $table->text('description')->nullable();
+            $table->text('description');
             $table->enum('breakfast', ['included', 'not_included']);
             $table->enum('status', ['available', 'not_available']);
             $table->timestamps();

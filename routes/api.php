@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerBooking;
+use App\Http\Controllers\ControllerRoom;
+use App\Http\Controllers\ControllerGuest;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route:: get('/guests', [GuestController:: class, 'index']);
-Route::post('/guests',[GuestController::class, 'store']);
-Route::put('/guests/{id}',[GuestController::class, 'update']);
+Route::get('/guests', [ControllerGuest::class, 'index'])->name('guest.index');
+Route::post('/guests',[ControllerGuest::class, 'store'])->name('guest.store');
+Route::put('/guests/{id}',[ControllerGuest::class, 'update'])->name('guest.put');
 
-Route:: get('/rooms', [RoomController:: class, 'index']);
-Route::post('/rooms',[RoomController::class, 'store']);
-Route::put('/rooms/{id}',[RoomController::class, 'update']);
+Route::get('/rooms', [ControllerRoom::class, 'index'])->name('rooms.index');
+Route::post('/rooms',[ControllerRoom::class, 'store'])->name('rooms.store');
+Route::put('/rooms/{id}',[ControllerRoom::class, 'update'])->name('rooms.put');
 
-Route:: get('/bookings', [BookingController:: class, 'index']);
-Route::post('/bookings',[BookingController::class, 'store']);
-Route::put('/bookings/{id}',[BookingController::class, 'update']);
+Route::get('/bookings', [ControllerBooking::class, 'index'])->name('bookings.index');
+Route::post('/bookings',[ControllerBooking::class, 'store'])->name('booking.post');
+Route::put('/bookings/{id}',[ControllerBooking::class, 'update'])->name('booking.put');
