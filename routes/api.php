@@ -22,11 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/guests', [ControllerGuest::class, 'index'])->name('guest.index');
-Route::post('/guests',[ControllerGuest::class, 'store'])->name('guest.store');
+Route::post('/guests',[ControllerGuest::class, 'store'])->name('guest.post');
 Route::put('/guests/{id}',[ControllerGuest::class, 'update'])->name('guest.put');
 
 Route::get('/rooms', [ControllerRoom::class, 'index'])->name('rooms.index');
-Route::post('/rooms',[ControllerRoom::class, 'store'])->name('rooms.store');
+Route::post('/rooms',[ControllerRoom::class, 'store'])->name('rooms.post');
 Route::put('/rooms/{id}',[ControllerRoom::class, 'update'])->name('rooms.put');
 
 Route::get('/bookings', [ControllerBooking::class, 'index'])->name('bookings.index');
