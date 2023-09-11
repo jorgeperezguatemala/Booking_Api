@@ -28,7 +28,9 @@ Route::put('/guests/{id}',[ControllerGuest::class, 'update'])->name('guest.put')
 Route::get('/rooms', [ControllerRoom::class, 'index'])->name('rooms.index');
 Route::post('/rooms',[ControllerRoom::class, 'store'])->name('rooms.post');
 Route::put('/rooms/{id}',[ControllerRoom::class, 'update'])->name('rooms.put');
+Route::delete('/room/{id}', [ControllerRoom::class, 'updateStatus'])->name('rooms.update');
 
 Route::get('/bookings', [ControllerBooking::class, 'index'])->name('bookings.index');
 Route::post('/bookings',[ControllerBooking::class, 'store'])->name('booking.post');
 Route::put('/bookings/{id}',[ControllerBooking::class, 'update'])->name('booking.put');
+Route::delete('/booking/{id}', [ControllerBooking::class, 'updateStatus'])->name('booking.update');
