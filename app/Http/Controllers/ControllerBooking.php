@@ -30,8 +30,8 @@ public function update(Request $request,string $id){
 public function updateStatus (Request $request, string $id){
     $booking = Booking::findOrFail($id);
     $booking->status = "canceled";
-    return response()->json($booking,200);
     $booking->save();
+    return response()->json($booking,200);
 }
 
 

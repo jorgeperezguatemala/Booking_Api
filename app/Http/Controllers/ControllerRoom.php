@@ -33,7 +33,8 @@ class ControllerRoom extends Controller
         public function updateStatus (Request $request, string $id){
             $room = Room::findOrFail($id);
             $room->status = "not_available";
-            return response()->json($room,200);
             $room->save();
+            return response()->json($room,200);
+
         }
 }
